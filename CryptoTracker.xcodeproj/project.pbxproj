@@ -10,21 +10,19 @@
 		8173DB85854567B703A64C5B /* Pods_CryptoTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C241567EC3B558B4A4F52F32 /* Pods_CryptoTracker.framework */; };
 		A9400EDF28B382FB007DA9EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9400EDE28B382FB007DA9EF /* AppDelegate.swift */; };
 		A9400EE128B382FB007DA9EF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9400EE028B382FB007DA9EF /* SceneDelegate.swift */; };
-		A9400EE328B382FB007DA9EF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9400EE228B382FB007DA9EF /* ViewController.swift */; };
-		A9400EE628B382FB007DA9EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9400EE428B382FB007DA9EF /* Main.storyboard */; };
 		A9400EE828B382FC007DA9EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9400EE728B382FC007DA9EF /* Assets.xcassets */; };
 		A9400EEB28B382FC007DA9EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9400EE928B382FC007DA9EF /* LaunchScreen.storyboard */; };
+		A9400EF328B38ACA007DA9EF /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9400EF228B38ACA007DA9EF /* AuthorizationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A9400EDB28B382FB007DA9EF /* CryptoTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9400EDE28B382FB007DA9EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9400EE028B382FB007DA9EF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A9400EE228B382FB007DA9EF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A9400EE528B382FB007DA9EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A9400EE728B382FC007DA9EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A9400EEA28B382FC007DA9EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A9400EEC28B382FC007DA9EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A9400EF228B38ACA007DA9EF /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		C241567EC3B558B4A4F52F32 /* Pods_CryptoTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptoTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5BBAE22D0B9715D840F146E /* Pods-CryptoTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoTracker.debug.xcconfig"; path = "Target Support Files/Pods-CryptoTracker/Pods-CryptoTracker.debug.xcconfig"; sourceTree = "<group>"; };
 		F7FA02AD5AFA33B1AEB48F7F /* Pods-CryptoTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoTracker.release.xcconfig"; path = "Target Support Files/Pods-CryptoTracker/Pods-CryptoTracker.release.xcconfig"; sourceTree = "<group>"; };
@@ -73,8 +71,7 @@
 			children = (
 				A9400EDE28B382FB007DA9EF /* AppDelegate.swift */,
 				A9400EE028B382FB007DA9EF /* SceneDelegate.swift */,
-				A9400EE228B382FB007DA9EF /* ViewController.swift */,
-				A9400EE428B382FB007DA9EF /* Main.storyboard */,
+				A9400EF228B38ACA007DA9EF /* AuthorizationViewController.swift */,
 				A9400EE728B382FC007DA9EF /* Assets.xcassets */,
 				A9400EE928B382FC007DA9EF /* LaunchScreen.storyboard */,
 				A9400EEC28B382FC007DA9EF /* Info.plist */,
@@ -88,7 +85,6 @@
 				F5BBAE22D0B9715D840F146E /* Pods-CryptoTracker.debug.xcconfig */,
 				F7FA02AD5AFA33B1AEB48F7F /* Pods-CryptoTracker.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -154,7 +150,6 @@
 			files = (
 				A9400EEB28B382FC007DA9EF /* LaunchScreen.storyboard in Resources */,
 				A9400EE828B382FC007DA9EF /* Assets.xcassets in Resources */,
-				A9400EE628B382FB007DA9EF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,7 +202,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9400EE328B382FB007DA9EF /* ViewController.swift in Sources */,
+				A9400EF328B38ACA007DA9EF /* AuthorizationViewController.swift in Sources */,
 				A9400EDF28B382FB007DA9EF /* AppDelegate.swift in Sources */,
 				A9400EE128B382FB007DA9EF /* SceneDelegate.swift in Sources */,
 			);
@@ -216,14 +211,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A9400EE428B382FB007DA9EF /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A9400EE528B382FB007DA9EF /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A9400EE928B382FC007DA9EF /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -362,9 +349,10 @@
 				INFOPLIST_FILE = CryptoTracker/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -374,7 +362,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -391,9 +379,10 @@
 				INFOPLIST_FILE = CryptoTracker/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -403,7 +392,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
