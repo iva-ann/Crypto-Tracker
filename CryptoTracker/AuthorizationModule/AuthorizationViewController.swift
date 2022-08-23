@@ -26,6 +26,7 @@ class AuthorizationViewController: UIViewController {
         return login
     } ()
     
+    
     lazy var passwordTF: UITextField = {
         let password = UITextField()
         password.borderStyle = .roundedRect
@@ -49,9 +50,11 @@ class AuthorizationViewController: UIViewController {
         button.setTitle("Войти", for: .normal)
         button.setTitleColor(.black , for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 25)
+        button.addTarget(self, action: #selector(tappedButton), for: .touchUpInside)
         return button
     }()
     
+    var presenter: AuthorizationViewControllerProtocolOut!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,16 +79,10 @@ class AuthorizationViewController: UIViewController {
         }
         
         loginButton.snp.makeConstraints { make in
-            make.top.equalTo(authorizationStackView.snp.bottom).offset(250)
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-100)
             make.centerX.equalToSuperview()
             make.width.equalTo(200)
             make.height.equalTo(60)
-            
-//            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(100)
-//            make.leading.trailing.equalToSuperview().inset(30)
-//            make.centerX.equalToSuperview()
-//            make.width.equalTo(200)
-//            make.height.equalTo(60)
         }
         }
     
@@ -93,8 +90,16 @@ class AuthorizationViewController: UIViewController {
         self.view.endEditing(true)
     }
     
+    @objc private func tappedButton() {
+        print("tappedButtom")
+        self.presenter.createNewVC()
     }
+}
 
+/*
+ ProtocolIn - VM
+ protocolOut - VC
+ */
 
     
 

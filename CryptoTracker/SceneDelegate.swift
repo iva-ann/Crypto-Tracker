@@ -10,12 +10,12 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = AuthorizationViewController()
+        let authVC = AuthtorizationBuilder.createAuthorizationModule()
+        window.rootViewController = authVC
         window.makeKeyAndVisible()
         self.window = window
     }
@@ -50,4 +50,26 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
 }
+
+//class AppUtilities {
+//
+//  class func changeRootVC( _ vc: UIViewController) {
+//
+//    SceneDelegate.shared.window?.rootViewController = vc
+//    SceneDelegate.shared.window?.makeKeyAndVisible()
+//
+//
+//  }
+//}
+
+//extension SceneDelegate {
+//    static let shared = SceneDelegate()
+//
+//    class func changeRootVC( _ vc: UIViewController) {
+//
+//        SceneDelegate.shared.window?.rootViewController = vc
+//        SceneDelegate.shared.window?.makeKeyAndVisible()
+//
+//}
+//}
 
