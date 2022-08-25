@@ -73,7 +73,7 @@ extension CryptoTableViewController: CryptoTableProtocolOut {
     }
 }
 
-extension CryptoTableViewController: UITableViewDataSource, UITableViewDelegate {
+extension CryptoTableViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return presenter?.cryptoCoins?.count ?? 0
     }
@@ -88,7 +88,13 @@ extension CryptoTableViewController: UITableViewDataSource, UITableViewDelegate 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80 
     }
-    
-    
-    
+}
+
+extension CryptoTableViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let cryptoCoin = presenter?.cryptoCoins?[indexPath.row] else { return }
+        let cryptoInformationViewController = ModelBuilder.createCryptoInformationModule(cryptoInformation: cryptoCoin)
+        navigationController?.pushViewController(cryptoInformationViewController, animated: true)
+        
+    }
 }

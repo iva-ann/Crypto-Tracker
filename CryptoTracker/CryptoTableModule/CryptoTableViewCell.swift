@@ -36,9 +36,6 @@ class CryptoTableViewCell: UITableViewCell {
 //    Init
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super .init(style: style, reuseIdentifier: reuseIdentifier)
-        contentView.addSubview(nameLabel)
-        contentView.addSubview(symbolLabel)
-        contentView.addSubview(priceLabel)
     }
     
     required init?(coder: NSCoder) {
@@ -62,6 +59,10 @@ class CryptoTableViewCell: UITableViewCell {
     }
     
     func setupView() {
+        contentView.addSubview(nameLabel)
+        contentView.addSubview(symbolLabel)
+        contentView.addSubview(priceLabel)
+        
         nameLabel.sizeToFit()
         symbolLabel.sizeToFit()
         priceLabel.sizeToFit()
