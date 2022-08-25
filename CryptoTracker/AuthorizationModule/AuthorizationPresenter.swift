@@ -10,10 +10,11 @@ import UIKit
 
 final class AuthorizationPresenter: AuthorizationViewControllerProtocolOut {
     func createNewVC() {
-        let newVC = AuthtorizationBuilder.createCryptoTableModule()
+        let newVC = ModelBuilder.createCryptoTableModule()
         print("Creat new VC")
         let window = UIApplication.shared.connectedScenes.flatMap {($0 as? UIWindowScene)?.windows ?? []}.first {$0.isKeyWindow}
-        window?.rootViewController = UINavigationController(rootViewController: newVC)
+        let navBar = UINavigationController(rootViewController: newVC)
+        window?.rootViewController = navBar
         window?.makeKeyAndVisible()
         print("Change root VC")
     }

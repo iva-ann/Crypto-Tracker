@@ -54,7 +54,7 @@ class AuthorizationViewController: UIViewController {
         return button
     }()
     
-    var presenter: AuthorizationViewControllerProtocolOut!
+    var presenter: AuthorizationViewControllerProtocolOut?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -92,7 +92,7 @@ class AuthorizationViewController: UIViewController {
     
     @objc private func tappedButton() {
         print("tappedButtom")
-        self.presenter.createNewVC()
+        self.presenter?.createNewVC()
     }
 }
 

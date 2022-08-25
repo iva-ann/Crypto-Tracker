@@ -12,7 +12,7 @@ protocol Builder {
     static func createCryptoTableModule() -> UIViewController
 }
 
-class AuthtorizationBuilder: Builder {
+class ModelBuilder: Builder {
     
     static func createAuthorizationModule() -> UIViewController {
         let view = AuthorizationViewController()
@@ -23,6 +23,9 @@ class AuthtorizationBuilder: Builder {
     
     static func createCryptoTableModule() -> UIViewController {
         let view = CryptoTableViewController()
+        let network = Network()
+        let presenter = CryptoTablePresenter(view: view, network: network)
+        view.presenter = presenter
         return view 
     }
     

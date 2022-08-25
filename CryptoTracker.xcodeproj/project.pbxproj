@@ -20,6 +20,11 @@
 		A9400EFF28B41027007DA9EF /* CryptoTableProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9400EFE28B41027007DA9EF /* CryptoTableProtocols.swift */; };
 		A9400F0128B417CD007DA9EF /* ModelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9400F0028B417CD007DA9EF /* ModelBuilder.swift */; };
 		A9400F0328B4186A007DA9EF /* CryptoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9400F0228B4186A007DA9EF /* CryptoTableViewController.swift */; };
+		A95E04CC28B6A85F00529095 /* CryptoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95E04CB28B6A85F00529095 /* CryptoTableViewCell.swift */; };
+		A95E04D128B6E45000529095 /* CryptoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95E04D028B6E45000529095 /* CryptoModel.swift */; };
+		A9BCBC3A28B7FDF4009B6614 /* NetworkProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BCBC3928B7FDF4009B6614 /* NetworkProtocol.swift */; };
+		A9BCBC3D28B81B63009B6614 /* CryptoInformationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BCBC3C28B81B63009B6614 /* CryptoInformationPresenter.swift */; };
+		A9BCBC3F28B81B94009B6614 /* CryptoInformationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BCBC3E28B81B94009B6614 /* CryptoInformationProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +42,11 @@
 		A9400EFE28B41027007DA9EF /* CryptoTableProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTableProtocols.swift; sourceTree = "<group>"; };
 		A9400F0028B417CD007DA9EF /* ModelBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelBuilder.swift; sourceTree = "<group>"; };
 		A9400F0228B4186A007DA9EF /* CryptoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTableViewController.swift; sourceTree = "<group>"; };
+		A95E04CB28B6A85F00529095 /* CryptoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTableViewCell.swift; sourceTree = "<group>"; };
+		A95E04D028B6E45000529095 /* CryptoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoModel.swift; sourceTree = "<group>"; };
+		A9BCBC3928B7FDF4009B6614 /* NetworkProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProtocol.swift; sourceTree = "<group>"; };
+		A9BCBC3C28B81B63009B6614 /* CryptoInformationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoInformationPresenter.swift; sourceTree = "<group>"; };
+		A9BCBC3E28B81B94009B6614 /* CryptoInformationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoInformationProtocol.swift; sourceTree = "<group>"; };
 		C241567EC3B558B4A4F52F32 /* Pods_CryptoTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptoTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5BBAE22D0B9715D840F146E /* Pods-CryptoTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoTracker.debug.xcconfig"; path = "Target Support Files/Pods-CryptoTracker/Pods-CryptoTracker.debug.xcconfig"; sourceTree = "<group>"; };
 		F7FA02AD5AFA33B1AEB48F7F /* Pods-CryptoTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoTracker.release.xcconfig"; path = "Target Support Files/Pods-CryptoTracker/Pods-CryptoTracker.release.xcconfig"; sourceTree = "<group>"; };
@@ -85,9 +95,10 @@
 			children = (
 				A9400EDE28B382FB007DA9EF /* AppDelegate.swift */,
 				A9400EE028B382FB007DA9EF /* SceneDelegate.swift */,
-				A9400EFA28B40FDF007DA9EF /* Network.swift */,
 				A9400F0028B417CD007DA9EF /* ModelBuilder.swift */,
+				A9BCBC3828B7FDC2009B6614 /* NetworkLayer */,
 				A9400EF628B40BDC007DA9EF /* AuthorizationModule */,
+				A9400EF928B40FBD007DA9EF /* CryptoTableModule */,
 				A9400EE728B382FC007DA9EF /* Assets.xcassets */,
 				A9400EE928B382FC007DA9EF /* LaunchScreen.storyboard */,
 				A9400EEC28B382FC007DA9EF /* Info.plist */,
@@ -101,7 +112,6 @@
 				A9400EF228B38ACA007DA9EF /* AuthorizationViewController.swift */,
 				A9400EF428B40BCE007DA9EF /* AuthorizationPresenter.swift */,
 				A9400EF728B40C4B007DA9EF /* AuthorizationProtocols.swift */,
-				A9400EF928B40FBD007DA9EF /* CryptoTableModule */,
 			);
 			path = AuthorizationModule;
 			sourceTree = "<group>";
@@ -109,11 +119,32 @@
 		A9400EF928B40FBD007DA9EF /* CryptoTableModule */ = {
 			isa = PBXGroup;
 			children = (
+				A9400F0228B4186A007DA9EF /* CryptoTableViewController.swift */,
+				A95E04CB28B6A85F00529095 /* CryptoTableViewCell.swift */,
 				A9400EFC28B40FFC007DA9EF /* CryptoTablePresenter.swift */,
 				A9400EFE28B41027007DA9EF /* CryptoTableProtocols.swift */,
-				A9400F0228B4186A007DA9EF /* CryptoTableViewController.swift */,
+				A95E04D028B6E45000529095 /* CryptoModel.swift */,
+				A9BCBC3B28B81AEE009B6614 /* CryptoInformationModule */,
 			);
 			path = CryptoTableModule;
+			sourceTree = "<group>";
+		};
+		A9BCBC3828B7FDC2009B6614 /* NetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+				A9400EFA28B40FDF007DA9EF /* Network.swift */,
+				A9BCBC3928B7FDF4009B6614 /* NetworkProtocol.swift */,
+			);
+			path = NetworkLayer;
+			sourceTree = "<group>";
+		};
+		A9BCBC3B28B81AEE009B6614 /* CryptoInformationModule */ = {
+			isa = PBXGroup;
+			children = (
+				A9BCBC3C28B81B63009B6614 /* CryptoInformationPresenter.swift */,
+				A9BCBC3E28B81B94009B6614 /* CryptoInformationProtocol.swift */,
+			);
+			path = CryptoInformationModule;
 			sourceTree = "<group>";
 		};
 		E84E73E4542D1A017F7F858C /* Pods */ = {
@@ -239,6 +270,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9BCBC3D28B81B63009B6614 /* CryptoInformationPresenter.swift in Sources */,
 				A9400EF528B40BCE007DA9EF /* AuthorizationPresenter.swift in Sources */,
 				A9400EF328B38ACA007DA9EF /* AuthorizationViewController.swift in Sources */,
 				A9400EFD28B40FFC007DA9EF /* CryptoTablePresenter.swift in Sources */,
@@ -246,7 +278,11 @@
 				A9400EFB28B40FDF007DA9EF /* Network.swift in Sources */,
 				A9400EF828B40C4B007DA9EF /* AuthorizationProtocols.swift in Sources */,
 				A9400F0328B4186A007DA9EF /* CryptoTableViewController.swift in Sources */,
+				A95E04CC28B6A85F00529095 /* CryptoTableViewCell.swift in Sources */,
+				A9BCBC3F28B81B94009B6614 /* CryptoInformationProtocol.swift in Sources */,
 				A9400F0128B417CD007DA9EF /* ModelBuilder.swift in Sources */,
+				A95E04D128B6E45000529095 /* CryptoModel.swift in Sources */,
+				A9BCBC3A28B7FDF4009B6614 /* NetworkProtocol.swift in Sources */,
 				A9400EDF28B382FB007DA9EF /* AppDelegate.swift in Sources */,
 				A9400EE128B382FB007DA9EF /* SceneDelegate.swift in Sources */,
 			);
