@@ -33,12 +33,17 @@ class CryptoTableViewCell: UITableViewCell {
         return label
     }()
     
+    private let percentLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .systemGray3
+        label.textAlignment = .right
+        label.font = .systemFont(ofSize: 18, weight: .semibold )
+        return label
+    }()
+    
 //    Init
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super .init(style: style, reuseIdentifier: reuseIdentifier)
-        contentView.addSubview(nameLabel)
-        contentView.addSubview(symbolLabel)
-        contentView.addSubview(priceLabel)
     }
     
     required init?(coder: NSCoder) {
@@ -59,12 +64,19 @@ class CryptoTableViewCell: UITableViewCell {
         nameLabel.text = viewModel.name
         symbolLabel.text = viewModel.symbol
         priceLabel.text = viewModel.price
+        percentLabel.text = viewModel.percent
     }
     
     func setupView() {
+        contentView.addSubview(nameLabel)
+        contentView.addSubview(symbolLabel)
+        contentView.addSubview(priceLabel)
+        contentView.addSubview(percentLabel)
+        
         nameLabel.sizeToFit()
         symbolLabel.sizeToFit()
         priceLabel.sizeToFit()
+        percentLabel.sizeToFit()
         
         nameLabel.frame = CGRect(x: 35,
                                  y: 0,
@@ -79,7 +91,12 @@ class CryptoTableViewCell: UITableViewCell {
         priceLabel.frame = CGRect(x: contentView.frame.size.width/2,
                                  y: 0,
                                  width: (contentView.frame.size.width/2)-35,
-                                 height: contentView.frame.size.height)
+                                 height: contentView.frame.size.height/2)
+        
+        percentLabel.frame = CGRect(x: contentView.frame.size.width/2,
+                                    y: contentView.frame.size.height/2,
+                                    width: (contentView.frame.size.width/2)-35,
+                                    height: contentView.frame.size.height/2)
     }
 
 }

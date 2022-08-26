@@ -25,6 +25,7 @@
 		A9BCBC3A28B7FDF4009B6614 /* NetworkProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BCBC3928B7FDF4009B6614 /* NetworkProtocol.swift */; };
 		A9BCBC3D28B81B63009B6614 /* CryptoInformationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BCBC3C28B81B63009B6614 /* CryptoInformationPresenter.swift */; };
 		A9BCBC3F28B81B94009B6614 /* CryptoInformationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BCBC3E28B81B94009B6614 /* CryptoInformationProtocol.swift */; };
+		A9BCBC4128B826B2009B6614 /* CryptoInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BCBC4028B826B2009B6614 /* CryptoInformationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		A9BCBC3928B7FDF4009B6614 /* NetworkProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProtocol.swift; sourceTree = "<group>"; };
 		A9BCBC3C28B81B63009B6614 /* CryptoInformationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoInformationPresenter.swift; sourceTree = "<group>"; };
 		A9BCBC3E28B81B94009B6614 /* CryptoInformationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoInformationProtocol.swift; sourceTree = "<group>"; };
+		A9BCBC4028B826B2009B6614 /* CryptoInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoInformationViewController.swift; sourceTree = "<group>"; };
 		C241567EC3B558B4A4F52F32 /* Pods_CryptoTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptoTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5BBAE22D0B9715D840F146E /* Pods-CryptoTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoTracker.debug.xcconfig"; path = "Target Support Files/Pods-CryptoTracker/Pods-CryptoTracker.debug.xcconfig"; sourceTree = "<group>"; };
 		F7FA02AD5AFA33B1AEB48F7F /* Pods-CryptoTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoTracker.release.xcconfig"; path = "Target Support Files/Pods-CryptoTracker/Pods-CryptoTracker.release.xcconfig"; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				A9BCBC3828B7FDC2009B6614 /* NetworkLayer */,
 				A9400EF628B40BDC007DA9EF /* AuthorizationModule */,
 				A9400EF928B40FBD007DA9EF /* CryptoTableModule */,
+				A9BCBC3B28B81AEE009B6614 /* CryptoInformationModule */,
 				A9400EE728B382FC007DA9EF /* Assets.xcassets */,
 				A9400EE928B382FC007DA9EF /* LaunchScreen.storyboard */,
 				A9400EEC28B382FC007DA9EF /* Info.plist */,
@@ -124,7 +127,6 @@
 				A9400EFC28B40FFC007DA9EF /* CryptoTablePresenter.swift */,
 				A9400EFE28B41027007DA9EF /* CryptoTableProtocols.swift */,
 				A95E04D028B6E45000529095 /* CryptoModel.swift */,
-				A9BCBC3B28B81AEE009B6614 /* CryptoInformationModule */,
 			);
 			path = CryptoTableModule;
 			sourceTree = "<group>";
@@ -141,6 +143,7 @@
 		A9BCBC3B28B81AEE009B6614 /* CryptoInformationModule */ = {
 			isa = PBXGroup;
 			children = (
+				A9BCBC4028B826B2009B6614 /* CryptoInformationViewController.swift */,
 				A9BCBC3C28B81B63009B6614 /* CryptoInformationPresenter.swift */,
 				A9BCBC3E28B81B94009B6614 /* CryptoInformationProtocol.swift */,
 			);
@@ -276,6 +279,7 @@
 				A9400EFD28B40FFC007DA9EF /* CryptoTablePresenter.swift in Sources */,
 				A9400EFF28B41027007DA9EF /* CryptoTableProtocols.swift in Sources */,
 				A9400EFB28B40FDF007DA9EF /* Network.swift in Sources */,
+				A9BCBC4128B826B2009B6614 /* CryptoInformationViewController.swift in Sources */,
 				A9400EF828B40C4B007DA9EF /* AuthorizationProtocols.swift in Sources */,
 				A9400F0328B4186A007DA9EF /* CryptoTableViewController.swift in Sources */,
 				A95E04CC28B6A85F00529095 /* CryptoTableViewCell.swift in Sources */,

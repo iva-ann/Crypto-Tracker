@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct CryptoModel: Decodable {
     
@@ -18,22 +19,28 @@ struct data: Decodable {
     private enum CodingKeys : String, CodingKey {
         case name = "name"
         case symbol = "symbol"
-        case market_data = "market_data"
+        case marketData = "market_data"
     }
     
     let name: String?
     let symbol: String?
-    let market_data: market_data?
+    let marketData: marketData?
 }
 
-struct market_data: Decodable {
+struct marketData: Decodable {
     
-    private enum CodingKeys: String, CodingKey { case price_usd = "price_usd"}
-    let price_usd : Float?
+    private enum CodingKeys: String, CodingKey {
+        case priceUSD = "price_usd"
+        case percentChangeUsdLast24Hours = "percent_change_usd_last_24_hours"
+    }
+    
+    let priceUSD : Float?
+    let percentChangeUsdLast24Hours : Float?
 }
 
 struct CryptoTableViewCellCryptoModel {
     let name: String
     let symbol: String
     let price: String
+    let percent: String
 }
