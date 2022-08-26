@@ -96,11 +96,6 @@ class AuthorizationViewController: UIViewController {
     }
 }
 
-/*
- ProtocolIn - VM
- protocolOut - VC
- */
-
     
 
 

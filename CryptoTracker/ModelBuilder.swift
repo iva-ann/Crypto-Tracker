@@ -37,6 +37,4 @@ class ModelBuilder: Builder {
         view.presenter = presenter
         return view
     }
-    
-    
 }
