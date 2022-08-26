@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 struct CryptoModel: Decodable {
-    
+
     private enum CodingKeys: String, CodingKey { case data = "data"}
     let data : data?
 }

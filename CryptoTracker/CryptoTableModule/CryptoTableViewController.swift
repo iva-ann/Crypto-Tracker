@@ -19,7 +19,7 @@ class CryptoTableViewController: UIViewController {
         formatter.formatterBehavior = .default
         return formatter
     }()
-
+    
     let tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.register(CryptoTableViewCell.self,
@@ -29,9 +29,8 @@ class CryptoTableViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        view.backgroundColor = .secondarySystemBackground
-        navigationController?.navigationBar.prefersLargeTitles = true
-        title = "Crypto Tracker"
+        tableView.dataSource = self
+        tableView.delegate = self
         setupView()
     }
     
@@ -40,12 +39,11 @@ class CryptoTableViewController: UIViewController {
         tableView.frame = view.bounds
     }
     
-    
     func setupView() {
+        navigationController?.navigationBar.prefersLargeTitles = true
+        title = "Crypto Tracker"
         view.addSubview(tableView)
-        tableView.dataSource = self
-        tableView.delegate = self
-        }
+    }
 }
 
 extension CryptoTableViewController: CryptoTableProtocolOut {
@@ -53,18 +51,17 @@ extension CryptoTableViewController: CryptoTableProtocolOut {
         guard let cryptoCoins = presenter?.cryptoCoins else { return }
         self.cryptoViewModel = cryptoCoins.compactMap({
             let price = $0.data?.marketData?.priceUSD ?? 0
-            let percent = $0.data?.marketData?.percentChangeUsdLast24Hours ?? 0
             let formatter = CryptoTableViewController.numberFormatter
             let priceString = formatter.string(from: NSNumber(value: price))
-            let percentString = formatter.string(from: NSNumber(value: percent))
+            let percent = $0.data?.marketData?.percentChangeUsdLast24Hours ?? 0
+            let percentString = "\(String(format: "%.4f", percent))%"
             
-            
-           return  CryptoTableViewCellCryptoModel(
+            return  CryptoTableViewCellCryptoModel(
                 name: $0.data?.name ?? "Not found",
                 symbol: $0.data?.symbol ?? "Not found",
                 price: priceString ?? "Not found",
-                percent: percentString ?? "Not found"
-        )})
+                percent: percentString
+            )})
         
         DispatchQueue.main.async {
             self.tableView.reloadData()
@@ -72,7 +69,6 @@ extension CryptoTableViewController: CryptoTableProtocolOut {
     }
     
     func failure(error: Error) {
-//        здесь можно вывести на экран алерт 
         print(error.localizedDescription)
     }
 }
@@ -83,14 +79,14 @@ extension CryptoTableViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       guard let cell = tableView.dequeueReusableCell(withIdentifier: CryptoTableViewCell.identifier, for: indexPath) as? CryptoTableViewCell else { fatalError() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CryptoTableViewCell.identifier, for: indexPath) as? CryptoTableViewCell else { fatalError() }
         cell.configure(with: self.cryptoViewModel[indexPath.row])
-//        cell.backgroundColor = .secondarySystemBackground
+        cell.backgroundColor = .secondarySystemBackground
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80 
+        return 80
     }
 }
 
@@ -102,3 +98,5 @@ extension CryptoTableViewController: UITableViewDelegate {
         
     }
 }
+
+

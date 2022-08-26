@@ -18,8 +18,8 @@ class CryptoInformationPresenter: CryptoInformationProtocolIn {
         self.cryptoInformation = cryptoInformation
     }
     
-   public func getCryptoInformation() {
-       self.view?.setCryptoInformation(cryptoInform: cryptoInformation)
+    public func getCryptoInformation() {
+        self.view?.setCryptoInformation(cryptoInform: cryptoInformation)
     }
     
     

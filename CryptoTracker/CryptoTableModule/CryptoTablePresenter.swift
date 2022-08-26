@@ -6,9 +6,11 @@
 //
 
 import Foundation
+import UIKit
 
 class CryptoTablePresenter: CryptoTableProtocolIn {
-   weak var view: CryptoTableProtocolOut?
+    
+    weak var view: CryptoTableProtocolOut?
     weak var network: NetworkProtocol?
     var cryptoCoins: [CryptoModel]?
     
@@ -26,6 +28,9 @@ class CryptoTablePresenter: CryptoTableProtocolIn {
                 switch result {
                 case .success(let cryptoCoins):
                     self.cryptoCoins = cryptoCoins
+                    self.cryptoCoins?.sort(by: { firstCoin, secondCoin in
+                        return firstCoin.data?.marketData?.priceUSD ?? 0 > secondCoin.data?.marketData?.priceUSD ?? 0
+                    })
                     self.view?.succes()
                 case.failure(let error):
                     self.view?.failure(error: error)
@@ -34,4 +39,4 @@ class CryptoTablePresenter: CryptoTableProtocolIn {
         })
     }
 }
-      
+

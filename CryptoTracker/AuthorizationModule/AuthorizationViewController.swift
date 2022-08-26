@@ -9,8 +9,10 @@ import UIKit
 import SnapKit
 
 class AuthorizationViewController: UIViewController {
-
-    var titleLabel: UILabel = {
+    var presenter: AuthorizationViewControllerProtocolOut?
+    
+    //    Views
+    lazy var titleLabel: UILabel = {
         let title = UILabel()
         title.text = "Crypto Tracker"
         title.font = .boldSystemFont(ofSize: 50)
@@ -25,7 +27,6 @@ class AuthorizationViewController: UIViewController {
         login.attributedPlaceholder = NSAttributedString(string: "Логин", attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray4])
         return login
     } ()
-    
     
     lazy var passwordTF: UITextField = {
         let password = UITextField()
@@ -54,23 +55,28 @@ class AuthorizationViewController: UIViewController {
         return button
     }()
     
-    var presenter: AuthorizationViewControllerProtocolOut?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .secondarySystemBackground
+        addViews()
+    }
+    
+    override func viewDidLayoutSubviews() {
         setupView()
     }
     
-    func setupView() {
+    func addViews() {
         view.addSubview(titleLabel)
         view.addSubview(authorizationStackView)
         view.addSubview(loginButton)
+    }
+    
+    func setupView() {
         
         titleLabel.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(100)
             make.centerX.equalToSuperview()
-             }
+        }
         
         authorizationStackView.snp.makeConstraints { make in
             make.top.equalTo(titleLabel.snp.bottom).offset(100)
@@ -84,18 +90,14 @@ class AuthorizationViewController: UIViewController {
             make.width.equalTo(200)
             make.height.equalTo(60)
         }
-        }
+    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
     
     @objc private func tappedButton() {
-        print("tappedButtom")
         self.presenter?.createNewVC()
     }
 }
-
-    
-
 

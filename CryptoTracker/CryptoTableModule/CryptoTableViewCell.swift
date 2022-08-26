@@ -9,10 +9,8 @@ import UIKit
 
 class CryptoTableViewCell: UITableViewCell {
     static let identifier = "CryptoTableViewCell"
-
     
-//    SubviewsCryptoTableViewCellCryptoModel
-    
+    //    Views
     private let nameLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 25, weight: .medium)
@@ -41,7 +39,7 @@ class CryptoTableViewCell: UITableViewCell {
         return label
     }()
     
-//    Init
+    //    Init
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super .init(style: style, reuseIdentifier: reuseIdentifier)
     }
@@ -50,16 +48,13 @@ class CryptoTableViewCell: UITableViewCell {
         fatalError()
     }
     
-//    Layout
-    
+    //    Layout
     override func layoutSubviews() {
         super.layoutSubviews()
         setupView()
     }
     
-    
-//    Configure
-    
+    //    Configure
     func configure(with viewModel: CryptoTableViewCellCryptoModel) {
         nameLabel.text = viewModel.name
         symbolLabel.text = viewModel.symbol
@@ -84,19 +79,18 @@ class CryptoTableViewCell: UITableViewCell {
                                  height: contentView.frame.size.height/2)
         
         symbolLabel.frame = CGRect(x: 35,
-                                 y: contentView.frame.size.height/2 ,
-                                 width: contentView.frame.size.width/2,
-                                 height: contentView.frame.size.height/2)
+                                   y: contentView.frame.size.height/2 ,
+                                   width: contentView.frame.size.width/2,
+                                   height: contentView.frame.size.height/2)
         
         priceLabel.frame = CGRect(x: contentView.frame.size.width/2,
-                                 y: 0,
-                                 width: (contentView.frame.size.width/2)-35,
-                                 height: contentView.frame.size.height/2)
+                                  y: 0,
+                                  width: (contentView.frame.size.width/2)-35,
+                                  height: contentView.frame.size.height/2)
         
         percentLabel.frame = CGRect(x: contentView.frame.size.width/2,
                                     y: contentView.frame.size.height/2,
                                     width: (contentView.frame.size.width/2)-35,
                                     height: contentView.frame.size.height/2)
     }
-
 }

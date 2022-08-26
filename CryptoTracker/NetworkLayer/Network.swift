@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Network: NetworkProtocol {
+final class Network: NetworkProtocol {
     
     static var shared = Network()
     
@@ -26,7 +26,7 @@ class Network: NetworkProtocol {
         guard let urlCARDANO = URL(string: "https://data.messari.io/api/v1/assets/cardano/metrics") else { return }
         guard let urlXRP = URL(string: "https://data.messari.io/api/v1/assets/xrp/metrics") else { return }
         
-        
+        //        GET and Pars data
         let networkQueue = DispatchQueue(label: "networkQueue", attributes: .concurrent)
         let networkTaskGroup = DispatchGroup()
         
@@ -212,5 +212,4 @@ class Network: NetworkProtocol {
             print("get Crypto")
         }
     }
-    
 }

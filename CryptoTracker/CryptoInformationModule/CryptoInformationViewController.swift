@@ -9,10 +9,10 @@ import UIKit
 import SnapKit
 
 class CryptoInformationViewController: UIViewController {
-
     var presenter: CryptoInformationProtocolIn?
-
-   lazy var nameLabel: UILabel = {
+    
+//    Views
+    lazy var nameLabel: UILabel = {
         let label = UILabel()
         label.font = .boldSystemFont(ofSize: 35)
         label.textAlignment = .center
@@ -46,51 +46,40 @@ class CryptoInformationViewController: UIViewController {
         let label = UILabel()
         label.font = .systemFont(ofSize: 20)
         label.textAlignment = .left
-        label.text = "Price USD" 
+        label.text = "Price USD"
         return label
     }()
     
-    var parametrPercentLabel: UILabel = {
-       let label = UILabel()
-       label.textAlignment = .left
-       label.font = .systemFont(ofSize: 15)
+  lazy var parametrPercentLabel: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .left
+        label.font = .systemFont(ofSize: 15)
         label.numberOfLines = 0
         label.text = "Percent change last 24 hours"
-       return label
-   }()
-    
-//    lazy var parametrsStackView: UIStackView = {
-//        let stack = UIStackView(arrangedSubviews: [parametrPriceLabel, parametrPercentLabel])
-//        stack.axis = .vertical
-//        stack.alignment = .leading
-//        stack.spacing = 15
-//        return stack
-//    }()
-//
-//    lazy var priceStackView: UIStackView = {
-//        let stack = UIStackView(arrangedSubviews: [priceLabel, percentLabel])
-//        stack.axis = .vertical
-//        stack.alignment = .trailing
-//        stack.spacing = 15
-//        return stack
-//    }()
-    
-    
+        return label
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupView()
+        view.backgroundColor = .secondarySystemBackground
+        addViews()
         presenter?.getCryptoInformation()
     }
     
-    func setupView() {
-        view.backgroundColor = .secondarySystemBackground
+    override func viewDidLayoutSubviews() {
+        setupView()
+    }
+    
+    func addViews() {
         view.addSubview(nameLabel)
         view.addSubview(symbolLabel)
         view.addSubview(priceLabel)
         view.addSubview(percentLabel)
         view.addSubview(parametrPriceLabel)
         view.addSubview(parametrPercentLabel)
+    }
+    
+    func setupView() {
         
         nameLabel.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(40)
@@ -140,16 +129,15 @@ extension CryptoInformationViewController: CryptoInformationProtocolOut {
     
     func setCryptoInformation(cryptoInform: CryptoModel?) {
         
-        let price = cryptoInform?.data?.marketData?.priceUSD ?? 2222
+        let price = cryptoInform?.data?.marketData?.priceUSD ?? 0
         let formatter = CryptoInformationViewController.numberFormatter
         let priceString = formatter.string(from: NSNumber(value: price))
-        let percent = cryptoInform?.data?.marketData?.percentChangeUsdLast24Hours ?? 222
-        let percentString = formatter.string(from: NSNumber(value: percent))
-        
+        let percent = cryptoInform?.data?.marketData?.percentChangeUsdLast24Hours ?? 0
+        let percentString = "\(String(format: "%.4f", percent))%"
         
         nameLabel.text = cryptoInform?.data?.name
         symbolLabel.text = cryptoInform?.data?.symbol
         priceLabel.text = priceString
         percentLabel.text = percentString
-}
+    }
 }
